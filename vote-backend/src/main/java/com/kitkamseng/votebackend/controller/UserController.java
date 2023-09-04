@@ -73,7 +73,8 @@ public class UserController {
         }
 
         String token = generateToken(user.getUsername());
-        return ResponseEntity.ok(new LoginResponse(token));
+        LoginResponse response = new LoginResponse(token, user.getUsername(), user.getId());
+        return ResponseEntity.ok(response);
     }
 
     private String generateToken(String username){
