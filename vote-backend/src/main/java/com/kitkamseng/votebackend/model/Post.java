@@ -16,15 +16,17 @@ public class Post {
     @Column(length = 1000)
     private String postDescription;
 
+    private Long userId;
 
     public Post() {
         // Default constructor (no-argument constructor) is needed for JPA
     }
 
-    public Post(String postTitle, String postDescription, String imageUrl) {
+    public Post(String postTitle, String postDescription, String imageUrl, Long userId) {
         this.postTitle = postTitle;
         this.postDescription = postDescription;
         this.imageUrl = imageUrl;
+        this.userId = userId;
     }
 
     public Long getId() {
@@ -58,4 +60,13 @@ public class Post {
     public void setPostDescription(String postDescription) {
         this.postDescription = postDescription;
     }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
 }
